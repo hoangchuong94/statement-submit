@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150%;
+
+}
+
+#content-toast {
+  z-index: 1;
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  right: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+
+  }to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+
+.toast {
+  width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #ffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.toast::before {
+    content: "";
+    position: absolute;
+    background-color: #333;
+    width: 4px;
+    height: 52px;
+    left: 10px;
+    top: 6px;
+    border-radius: 2px;
+
+}
+
+.toast__icon {
+    font-size: 28px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.toast__close {
+  padding-left: 20px;
+  padding-right: 10px;
+  cursor: pointer; 
+  opacity: 0.5;
+}
+
+.toast__body {
+  flex-grow: 1;
+}
+
+.toast__body--header {
+    font-weight: 700;
+}
+
+.toast__body--dsc {
+    margin-top: 8px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.toast--infor::before {
+  background-color: #007bc2;
+}
+.toast__icon--infor {
+  color: #007bc2;
+}
+
+.toast--error::before {
+  background-color: #f01b23;
+}
+
+.toast__icon--error {
+  color: #f01b23;
+}
+
+.toast--warning::before {
+  background-color: #f0a92e;
+}
+
+.toast__icon--warning {
+  color: #f0a92e ;
+}
+
+.toast--successful::before {
+  background-color: #21a67a;
+}
+
+.toast__icon--successful {
+  color: #21a67a;
+}
+
+
+.action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.content-btn {
+  display: flex;
+}
+
+.btn + .btn {
+  margin-left: 34px;
+}
+
+.btn {
+  padding: 12px 34px;
+  background-color: transparent;
+  border: none;
+  line-height: 1.4;
+  font-size: 16px;
+}
+
+.btn:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn {
+  border-radius: 40px;
+}
+
+.btn--successful {
+  background-color: #21a67a;
+}
+.btn--warning {
+  background-color: #f0a92e;
+
+}
+.btn--error {
+  background-color: #f01b23;
+
+}
+.btn--infor {
+  background-color: #007bc2;
+
+}
